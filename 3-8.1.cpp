@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-bool aaa(string &s,int left,int right){
+bool judge(string &s,int left,int right){
 	while (right > left){
 		if (s[right] == s[left]){
 			right--;
@@ -23,12 +23,12 @@ int main()
 	for (size_t i = 0; i < s1.size(); ++i){
 		s = s1;
 		s.insert(i, s2);
-		if (aaa(s, 0, s.size() - 1)){
+		if (judge(s, 0, s.size() - 1)){
 			n++;
 		}
 	}
 	s1 += s2;
-	if (aaa(s1, 0, s1.size() - 1)){
+	if (judge(s1, 0, s1.size() - 1)){
 		n++;
 	}
 	cout << n << endl;
